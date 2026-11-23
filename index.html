@@ -1,0 +1,166 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inbox Follow-up Assistant</title><style>
+body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#f5f6f8;color:#1d2433}
+header{background:#1d2433;color:#fff;padding:18px 32px}header h1{margin:0;font-size:20px}header p{margin:4px 0 0;opacity:.75;font-size:13px}
+main{max-width:1150px;margin:0 auto;padding:24px 32px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.stat{background:#fff;border-radius:10px;padding:16px;box-shadow:0 1px 2px #0001}.stat b{font-size:28px;display:block}.stat span{font-size:13px;color:#667}
+h2{font-size:16px;margin:28px 0 10px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 2px #0001;font-size:13.5px}
+th{text-align:left;background:#eef0f4;padding:9px 10px;font-size:12px;text-transform:uppercase;color:#556;letter-spacing:.03em}
+td{padding:9px 10px;border-top:1px solid #eef0f4;vertical-align:top}tbody tr{cursor:pointer}tbody tr:hover{background:#f8f9fc}
+.sub{color:#667;font-size:12.5px;margin-top:2px}
+.days{font-weight:600;background:#eef0f4;border-radius:6px;padding:2px 7px;white-space:nowrap}.days.warn{background:#fde8e8;color:#b42318}
+.pri{font-size:11px;font-weight:700;border-radius:5px;padding:2px 6px}.pri.high{background:#fde8e8;color:#b42318}.pri.medium{background:#fef3dc;color:#9a6200}.pri.low{background:#e7f3ec;color:#1e7a46}
+.card{background:#fff;border-radius:10px;padding:16px 18px;margin-bottom:14px;box-shadow:0 1px 2px #0001}
+.chead{display:flex;justify-content:space-between;gap:10px;font-size:14px}.meta{font-size:12.5px;color:#556;margin:8px 0}
+pre{white-space:pre-wrap;font-family:inherit;font-size:13.5px;background:#f8f9fc;border:1px solid #eef0f4;border-radius:8px;padding:12px;margin:0}
+.acts{display:flex;align-items:center;gap:12px;margin-top:10px}.src{font-size:12px;color:#889}
+button{background:#2f5bea;color:#fff;border:0;border-radius:7px;padding:7px 14px;font-size:13px;cursor:pointer}button.done{background:#1e7a46}
+details{margin-top:28px}summary{cursor:pointer;font-weight:600}.note{font-size:12px;color:#889;margin-top:30px}
+</style></head><body><header><h1>Inbox Follow-up Assistant</h1><p>Mailbox: maria@oakridgepm.example &middot; as of 2026-11-23 &middot; Sample data: all names, companies and addresses are fictional</p></header><main>
+<div class="stats"><div class="stat"><b>40</b><span>emails scanned</span></div>
+<div class="stat"><b>10</b><span>open follow-ups found</span></div>
+<div class="stat"><b>3</b><span>high priority (habitability)</span></div>
+<div class="stat"><b>10</b><span>chase emails drafted, ready to review</span></div></div>
+<h2>Open follow-ups, longest waiting first</h2>
+<table><thead><tr><th>Waiting</th><th>Priority</th><th>Property / issue</th><th>Vendor</th><th>Ball with</th><th>Last contact</th><th>Next action</th></tr></thead><tbody><tr onclick="document.getElementById('d0').scrollIntoView({behavior:'smooth'})">
+<td><span class="days warn">26d</span></td>
+<td><span class="pri medium">Medium</span></td>
+<td><b>15 Elm St</b><div class="sub">Past-due HVAC invoice #CB-7781 ($620, furnace ignitor)</div></td>
+<td>CoolBreeze HVAC</td><td>Us</td><td>2026-11-13</td>
+<td>Pay invoice #CB-7781 and confirm payment to CoolBreeze</td></tr><tr onclick="document.getElementById('d1').scrollIntoView({behavior:'smooth'})">
+<td><span class="days warn">20d</span></td>
+<td><span class="pri low">Low</span></td>
+<td><b>The Willows (grounds)</b><div class="sub">November landscaping invoice #GL-1102 ($480) unpaid</div></td>
+<td>GreenLeaf Landscaping</td><td>Us</td><td>2026-11-03</td>
+<td>Pay invoice #GL-1102</td></tr><tr onclick="document.getElementById('d2').scrollIntoView({behavior:'smooth'})">
+<td><span class="days warn">17d</span></td>
+<td><span class="pri high">High</span></td>
+<td><b>88 Birchwood Ave (rear bedroom)</b><div class="sub">Roof leak into bedroom ceiling; inspection date never sent</div></td>
+<td>Summit Roofing</td><td>Vendor</td><td>2026-11-17</td>
+<td>Get a firm inspection date from Summit, then update owner Linda Yau on status and expected cost</td></tr><tr onclick="document.getElementById('d3').scrollIntoView({behavior:'smooth'})">
+<td><span class="days warn">16d</span></td>
+<td><span class="pri medium">Medium</span></td>
+<td><b>The Willows (parking gate)</b><div class="sub">Gate motor replacement quote ($2,340) unanswered</div></td>
+<td>Iron Works Gates</td><td>Us</td><td>2026-11-07</td>
+<td>Get owner approval for the $2,340 quote and reply to Tom</td></tr><tr onclick="document.getElementById('d4').scrollIntoView({behavior:'smooth'})">
+<td><span class="days ">13d</span></td>
+<td><span class="pri high">High</span></td>
+<td><b>230 Cedar Ln, Unit 5</b><div class="sub">Black mold spreading on bathroom ceiling; exhaust fan not working</div></td>
+<td>None yet</td><td>Us</td><td>2026-11-17</td>
+<td>Reply to the tenant and dispatch a mold/moisture inspection plus a fan repair</td></tr><tr onclick="document.getElementById('d5').scrollIntoView({behavior:'smooth'})">
+<td><span class="days ">12d</span></td>
+<td><span class="pri high">High</span></td>
+<td><b>412 Maple Ct, Unit 3B</b><div class="sub">No hot water; water heater leaking and needs replacement</div></td>
+<td>Blue Line Plumbing</td><td>Owner</td><td>2026-11-20</td>
+<td>Get Gordon&#x27;s approval of the $1,850 quote today and send Blue Line the go-ahead</td></tr><tr onclick="document.getElementById('d6').scrollIntoView({behavior:'smooth'})">
+<td><span class="days ">11d</span></td>
+<td><span class="pri medium">Medium</span></td>
+<td><b>The Willows (common area/building)</b><div class="sub">Annual smoke/CO inspection; vendor waiting on unit list and tenant notice</div></td>
+<td>Safeguard Fire &amp; Life</td><td>Us</td><td>2026-11-12</td>
+<td>Send Safeguard the unit list and tenant-notice confirmation, and propose dates</td></tr><tr onclick="document.getElementById('d7').scrollIntoView({behavior:'smooth'})">
+<td><span class="days ">9d</span></td>
+<td><span class="pri low">Low</span></td>
+<td><b>15 Elm St</b><div class="sub">Garbage disposal jammed; plumber waiting on access details</div></td>
+<td>Blue Line Plumbing</td><td>Us</td><td>2026-11-14</td>
+<td>Give Blue Line the tenant&#x27;s contact for access and reschedule</td></tr><tr onclick="document.getElementById('d8').scrollIntoView({behavior:'smooth'})">
+<td><span class="days ">9d</span></td>
+<td><span class="pri low">Low</span></td>
+<td><b>230 Cedar Ln, Unit 2</b><div class="sub">Dishwasher repair invoice #FR-2291 ($145) unpaid; repair is complete</div></td>
+<td>FixRight Appliance</td><td>Us</td><td>2026-11-15</td>
+<td>Pay invoice #FR-2291</td></tr><tr onclick="document.getElementById('d9').scrollIntoView({behavior:'smooth'})">
+<td><span class="days ">7d</span></td>
+<td><span class="pri medium">Medium</span></td>
+<td><b>412 Maple Ct, Unit 1A</b><div class="sub">Mice in kitchen (droppings, scratching in walls)</div></td>
+<td>None yet</td><td>Us</td><td>2026-11-16</td>
+<td>Book pest control and confirm access with the tenant</td></tr></tbody></table>
+<h2>Drafted chase emails <button style="float:right;margin-top:-6px" onclick="cpAll(this)">Copy all</button></h2><div class="card" id="d0"><div class="chead"><div><span class="pri medium">Medium</span> <b>15 Elm St</b> &middot; Past-due HVAC invoice #CB-7781 ($620, furnace ignitor)</div><span class="days warn">26 days waiting</span></div>
+<div class="meta">To: ar@coolbreezehvac.example<br>Subject: RE: Past due: Invoice #CB-7781</div>
+<pre id="b0">Hi CoolBreeze Accounts,
+
+Thank you for the reminder, and I&#x27;m sorry for the delay on invoice #CB-7781 ($620) for the furnace ignitor at 15 Elm St. I&#x27;m processing payment this week and will send you confirmation once it goes out. Please let me know if there are any late fees so I can include them.
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(0,this)">Copy email</button><span class="src">Source emails: #12, #13</span></div></div><div class="card" id="d1"><div class="chead"><div><span class="pri low">Low</span> <b>The Willows (grounds)</b> &middot; November landscaping invoice #GL-1102 ($480) unpaid</div><span class="days warn">20 days waiting</span></div>
+<div class="meta">To: billing@greenleafland.example<br>Subject: Invoice #GL-1102 - The Willows</div>
+<pre id="b1">Hi GreenLeaf billing,
+
+I&#x27;m confirming receipt of invoice #GL-1102 ($480) for November service at The Willows. I&#x27;m processing payment this week and will send you confirmation once it goes out.
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(1,this)">Copy email</button><span class="src">Source emails: #21</span></div></div><div class="card" id="d2"><div class="chead"><div><span class="pri high">High</span> <b>88 Birchwood Ave (rear bedroom)</b> &middot; Roof leak into bedroom ceiling; inspection date never sent</div><span class="days warn">17 days waiting</span></div>
+<div class="meta">To: dana@summitroofing.example<br>Subject: RE: Roof leak inspection - 88 Birchwood Ave - need a date</div>
+<pre id="b2">Hi Dana,
+
+I&#x27;m following up on the 88 Birchwood Ave roof leak. On Nov 6 you said you&#x27;d send an inspection date by that Monday, but I haven&#x27;t received one. Water is still coming through the rear bedroom ceiling when it rains, and the stain is growing. Could you confirm an inspection date this week? The owner has also asked for a cost estimate, so a rough range after the visit would help.
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(2,this)">Copy email</button><span class="src">Source emails: #5, #6, #7, #27</span></div></div><div class="card" id="d3"><div class="chead"><div><span class="pri medium">Medium</span> <b>The Willows (parking gate)</b> &middot; Gate motor replacement quote ($2,340) unanswered</div><span class="days warn">16 days waiting</span></div>
+<div class="meta">To: tom@ironworksgates.example<br>Subject: RE: Quote: parking gate motor - The Willows</div>
+<pre id="b3">Hi Tom,
+
+Thank you for the $2,340 quote for the gate operator motor at The Willows, and sorry for the delay in getting back to you. I&#x27;m getting owner approval now and expect to confirm within a few days. Can you confirm the quote is still valid and that the 7-10 day lead time still applies? Also, is there anything we should do to keep the gate secure until then?
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(3,this)">Copy email</button><span class="src">Source emails: #15</span></div></div><div class="card" id="d4"><div class="chead"><div><span class="pri high">High</span> <b>230 Cedar Ln, Unit 5</b> &middot; Black mold spreading on bathroom ceiling; exhaust fan not working</div><span class="days ">13 days waiting</span></div>
+<div class="meta">To: kmondale@example.com<br>Subject: RE: Mold in bathroom - 230 Cedar Ln #5</div>
+<pre id="b4">Hi Keisha,
+
+I&#x27;m sorry for the slow reply. You should have heard from me sooner. I&#x27;m arranging a mold inspection and a repair of the bathroom exhaust fan this week. Could you send a photo of the affected area and let me know which days and times work for access? Until then, please keep the bathroom door or window open after showers to help reduce moisture.
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(4,this)">Copy email</button><span class="src">Source emails: #16, #17</span></div></div><div class="card" id="d5"><div class="chead"><div><span class="pri high">High</span> <b>412 Maple Ct, Unit 3B</b> &middot; No hot water; water heater leaking and needs replacement</div><span class="days ">12 days waiting</span></div>
+<div class="meta">To: gpell.owner@example.com<br>Subject: URGENT: Approval needed today - water heater replacement 412 Maple Ct #3B</div>
+<pre id="b5">Hi Gordon,
+
+I&#x27;m following up on my Nov 11 email. The tenant in 3B has had no hot water for two weeks and is now boiling water to bathe. Blue Line&#x27;s quote is $1,850 installed to replace the 14-year-old tank, which is leaking at the base. Blue Line is closed Nov 26-27, so if you can approve today I can get the heater ordered before the holiday. Please reply &quot;approved&quot; and I&#x27;ll take care of the rest.
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(5,this)">Copy email</button><span class="src">Source emails: #1, #2, #3, #4, #35, #40</span></div></div><div class="card" id="d6"><div class="chead"><div><span class="pri medium">Medium</span> <b>The Willows (common area/building)</b> &middot; Annual smoke/CO inspection; vendor waiting on unit list and tenant notice</div><span class="days ">11 days waiting</span></div>
+<div class="meta">To: scheduling@safeguardfls.example<br>Subject: RE: Annual smoke/CO inspection - The Willows</div>
+<pre id="b6">Hi Safeguard team,
+
+Thank you for your patience. I&#x27;ll send the full unit list for The Willows this week and confirm once tenant notices have gone out. Could you share your first available inspection dates in early December so I can put the date in the notice?
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(6,this)">Copy email</button><span class="src">Source emails: #28</span></div></div><div class="card" id="d7"><div class="chead"><div><span class="pri low">Low</span> <b>15 Elm St</b> &middot; Garbage disposal jammed; plumber waiting on access details</div><span class="days ">9 days waiting</span></div>
+<div class="meta">To: ray@bluelineplumbing.example<br>Subject: RE: Disposal repair - 15 Elm St</div>
+<pre id="b7">Hi Ray,
+
+Sorry I missed your question about access. Please coordinate directly with the tenant, Hannah Cole, at hcole@example.com. Since Thursday and Friday have passed, could you suggest a new slot, either before your Nov 26-27 closure or early the following week? Please copy me on the confirmed time.
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(7,this)">Copy email</button><span class="src">Source emails: #22, #23, #24, #40</span></div></div><div class="card" id="d8"><div class="chead"><div><span class="pri low">Low</span> <b>230 Cedar Ln, Unit 2</b> &middot; Dishwasher repair invoice #FR-2291 ($145) unpaid; repair is complete</div><span class="days ">9 days waiting</span></div>
+<div class="meta">To: jobs@fixrightappliance.example<br>Subject: Invoice #FR-2291 - 230 Cedar Ln #2 dishwasher</div>
+<pre id="b8">Hi FixRight team,
+
+Thank you for the quick dishwasher repair at 230 Cedar Ln #2. The tenant confirmed it&#x27;s working well. I&#x27;m processing invoice #FR-2291 ($145) for payment this week and will let you know once it&#x27;s sent.
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(8,this)">Copy email</button><span class="src">Source emails: #8, #9, #10, #11</span></div></div><div class="card" id="d9"><div class="chead"><div><span class="pri medium">Medium</span> <b>412 Maple Ct, Unit 1A</b> &middot; Mice in kitchen (droppings, scratching in walls)</div><span class="days ">7 days waiting</span></div>
+<div class="meta">To: lferreira@example.com<br>Subject: RE: Mice in kitchen - 412 Maple Ct Unit 1A</div>
+<pre id="b9">Hi Luis,
+
+Thank you for reporting this, and sorry for the delayed reply. I&#x27;m booking pest control for your unit and will confirm the appointment time with you. Could you tell me which days work for access? Until then, please keep food in sealed containers and let me know if you see any openings under the sink.
+
+Thanks,
+Maria</pre>
+<div class="acts"><button onclick="cp(9,this)">Copy email</button><span class="src">Source emails: #14</span></div></div>
+<details><summary>Source inbox (40 emails)</summary><table style="margin-top:10px"><thead><tr><th>#</th><th>Date</th><th>From</th><th>Subject</th></tr></thead><tbody><tr><td>#37</td><td>2026-11-22 08:00</td><td>Google Workspace</td><td>Storage 85% full</td></tr><tr><td>#40</td><td>2026-11-21 16:00</td><td>Ray Okafor</td><td>Holiday schedule</td></tr><tr><td>#32</td><td>2026-11-21 09:00</td><td>County Assessor</td><td>Property tax reminder</td></tr><tr><td>#35</td><td>2026-11-20 14:00</td><td>Jenna Ruiz</td><td>RE: No hot water - 412 Maple Ct Unit 3B</td></tr><tr><td>#39</td><td>2026-11-20 11:00</td><td>Marcus Lee</td><td>Showing for 15 Elm St #B?</td></tr><tr><td>#29</td><td>2026-11-20 06:00</td><td>RentPro Weekly</td><td>5 trends shaping rentals in 2027</td></tr><tr><td>#20</td><td>2026-11-19 11:00</td><td>Sam Ortiz</td><td>RE: Outlet sparking - 88 Birchwood Ave</td></tr><tr><td>#19</td><td>2026-11-19 09:30</td><td>maria@oakridgepm.example</td><td>Outlet sparking - 88 Birchwood Ave</td></tr><tr><td>#30</td><td>2026-11-19 07:00</td><td>Home Depot Pro</td><td>Pro Xtra: 20% off water heaters this week</td></tr><tr><td>#31</td><td>2026-11-18 13:00</td><td>Zoom</td><td>Cloud recording now available</td></tr><tr><td>#18</td><td>2026-11-18 12:00</td><td>Gordon Pell</td><td>Rent increase for 412 Maple renewals?</td></tr><tr><td>#38</td><td>2026-11-18 09:00</td><td>Tenant Portal</td><td>Rent payment received - 230 Cedar Ln #2</td></tr><tr><td>#33</td><td>2026-11-17 18:00</td><td>LinkedIn</td><td>You appeared in 9 searches this week</td></tr><tr><td>#27</td><td>2026-11-17 15:30</td><td>Linda Yau</td><td>Status on 88 Birchwood roof?</td></tr><tr><td>#17</td><td>2026-11-17 08:20</td><td>Keisha Mondale</td><td>RE: Mold in bathroom - 230 Cedar Ln #5</td></tr><tr><td>#14</td><td>2026-11-16 21:40</td><td>Luis Ferreira</td><td>Mice in kitchen - 412 Maple Ct Unit 1A</td></tr><tr><td>#26</td><td>2026-11-16 10:00</td><td>Ben Akers</td><td>RE: Window screen torn - 230 Cedar Ln #4</td></tr><tr><td>#34</td><td>2026-11-16 10:00</td><td>Bank of Pacific</td><td>Deposit received</td></tr><tr><td>#36</td><td>2026-11-15 12:00</td><td>NARPM Chapter</td><td>December mixer RSVP</td></tr><tr><td>#25</td><td>2026-11-15 10:00</td><td>Ben Akers</td><td>Window screen torn - 230 Cedar Ln #4</td></tr><tr><td>#11</td><td>2026-11-15 09:10</td><td>Priya Natarajan</td><td>RE: Dishwasher not draining - 230 Cedar Ln #2</td></tr><tr><td>#10</td><td>2026-11-14 17:45</td><td>FixRight Appliance</td><td>Completed: Dishwasher repair 230 Cedar Ln #2</td></tr><tr><td>#24</td><td>2026-11-14 08:05</td><td>Ray Okafor</td><td>RE: Disposal repair - 15 Elm St</td></tr><tr><td>#23</td><td>2026-11-13 12:10</td><td>maria@oakridgepm.example</td><td>Disposal repair - 15 Elm St</td></tr><tr><td>#13</td><td>2026-11-13 10:00</td><td>Accounts</td><td>Past due: Invoice #CB-7781</td></tr><tr><td>#22</td><td>2026-11-13 09:45</td><td>Hannah Cole</td><td>Garbage disposal jammed - 15 Elm St</td></tr><tr><td>#9</td><td>2026-11-12 15:30</td><td>maria@oakridgepm.example</td><td>Dishwasher repair 230 Cedar Ln #2</td></tr><tr><td>#8</td><td>2026-11-12 13:02</td><td>Priya Natarajan</td><td>Dishwasher not draining - 230 Cedar Ln #2</td></tr><tr><td>#28</td><td>2026-11-12 08:00</td><td>Safeguard Fire &amp; Life</td><td>Annual smoke/CO inspection - The Willows</td></tr><tr><td>#4</td><td>2026-11-11 09:00</td><td>maria@oakridgepm.example</td><td>Approval needed: water heater replacement 412 Maple Ct #3B</td></tr><tr><td>#3</td><td>2026-11-10 16:05</td><td>Ray Okafor</td><td>RE: Service request: 412 Maple Ct #3B water heater</td></tr><tr><td>#16</td><td>2026-11-10 07:55</td><td>Keisha Mondale</td><td>Mold in bathroom - 230 Cedar Ln #5</td></tr><tr><td>#2</td><td>2026-11-09 10:40</td><td>maria@oakridgepm.example</td><td>Service request: 412 Maple Ct #3B water heater</td></tr><tr><td>#1</td><td>2026-11-09 08:12</td><td>Jenna Ruiz</td><td>No hot water - 412 Maple Ct Unit 3B</td></tr><tr><td>#15</td><td>2026-11-07 14:20</td><td>Tom Brandt</td><td>Quote: parking gate motor - The Willows</td></tr><tr><td>#7</td><td>2026-11-06 11:15</td><td>Dana Whitlock</td><td>RE: Roof leak inspection - 88 Birchwood Ave</td></tr><tr><td>#6</td><td>2026-11-05 08:30</td><td>maria@oakridgepm.example</td><td>Roof leak inspection - 88 Birchwood Ave</td></tr><tr><td>#5</td><td>2026-11-04 19:22</td><td>Omar Haddad</td><td>Ceiling leaking in bedroom - 88 Birchwood Ave</td></tr><tr><td>#21</td><td>2026-11-03 08:00</td><td>GreenLeaf Landscaping</td><td>November service invoice - The Willows</td></tr><tr><td>#12</td><td>2026-10-28 10:00</td><td>Accounts</td><td>Invoice #CB-7781 - 15 Elm St furnace repair</td></tr></tbody></table></details>
+<p class="note">Demo. Nothing is sent automatically; every draft is reviewed by a person first.</p>
+</main><script>const D=[{"to": "ar@coolbreezehvac.example", "subject": "RE: Past due: Invoice #CB-7781", "body": "Hi CoolBreeze Accounts,\n\nThank you for the reminder, and I'm sorry for the delay on invoice #CB-7781 ($620) for the furnace ignitor at 15 Elm St. I'm processing payment this week and will send you confirmation once it goes out. Please let me know if there are any late fees so I can include them.\n\nThanks,\nMaria"}, {"to": "billing@greenleafland.example", "subject": "Invoice #GL-1102 - The Willows", "body": "Hi GreenLeaf billing,\n\nI'm confirming receipt of invoice #GL-1102 ($480) for November service at The Willows. I'm processing payment this week and will send you confirmation once it goes out.\n\nThanks,\nMaria"}, {"to": "dana@summitroofing.example", "subject": "RE: Roof leak inspection - 88 Birchwood Ave - need a date", "body": "Hi Dana,\n\nI'm following up on the 88 Birchwood Ave roof leak. On Nov 6 you said you'd send an inspection date by that Monday, but I haven't received one. Water is still coming through the rear bedroom ceiling when it rains, and the stain is growing. Could you confirm an inspection date this week? The owner has also asked for a cost estimate, so a rough range after the visit would help.\n\nThanks,\nMaria"}, {"to": "tom@ironworksgates.example", "subject": "RE: Quote: parking gate motor - The Willows", "body": "Hi Tom,\n\nThank you for the $2,340 quote for the gate operator motor at The Willows, and sorry for the delay in getting back to you. I'm getting owner approval now and expect to confirm within a few days. Can you confirm the quote is still valid and that the 7-10 day lead time still applies? Also, is there anything we should do to keep the gate secure until then?\n\nThanks,\nMaria"}, {"to": "kmondale@example.com", "subject": "RE: Mold in bathroom - 230 Cedar Ln #5", "body": "Hi Keisha,\n\nI'm sorry for the slow reply. You should have heard from me sooner. I'm arranging a mold inspection and a repair of the bathroom exhaust fan this week. Could you send a photo of the affected area and let me know which days and times work for access? Until then, please keep the bathroom door or window open after showers to help reduce moisture.\n\nThanks,\nMaria"}, {"to": "gpell.owner@example.com", "subject": "URGENT: Approval needed today - water heater replacement 412 Maple Ct #3B", "body": "Hi Gordon,\n\nI'm following up on my Nov 11 email. The tenant in 3B has had no hot water for two weeks and is now boiling water to bathe. Blue Line's quote is $1,850 installed to replace the 14-year-old tank, which is leaking at the base. Blue Line is closed Nov 26-27, so if you can approve today I can get the heater ordered before the holiday. Please reply \"approved\" and I'll take care of the rest.\n\nThanks,\nMaria"}, {"to": "scheduling@safeguardfls.example", "subject": "RE: Annual smoke/CO inspection - The Willows", "body": "Hi Safeguard team,\n\nThank you for your patience. I'll send the full unit list for The Willows this week and confirm once tenant notices have gone out. Could you share your first available inspection dates in early December so I can put the date in the notice?\n\nThanks,\nMaria"}, {"to": "ray@bluelineplumbing.example", "subject": "RE: Disposal repair - 15 Elm St", "body": "Hi Ray,\n\nSorry I missed your question about access. Please coordinate directly with the tenant, Hannah Cole, at hcole@example.com. Since Thursday and Friday have passed, could you suggest a new slot, either before your Nov 26-27 closure or early the following week? Please copy me on the confirmed time.\n\nThanks,\nMaria"}, {"to": "jobs@fixrightappliance.example", "subject": "Invoice #FR-2291 - 230 Cedar Ln #2 dishwasher", "body": "Hi FixRight team,\n\nThank you for the quick dishwasher repair at 230 Cedar Ln #2. The tenant confirmed it's working well. I'm processing invoice #FR-2291 ($145) for payment this week and will let you know once it's sent.\n\nThanks,\nMaria"}, {"to": "lferreira@example.com", "subject": "RE: Mice in kitchen - 412 Maple Ct Unit 1A", "body": "Hi Luis,\n\nThank you for reporting this, and sorry for the delayed reply. I'm booking pest control for your unit and will confirm the appointment time with you. Could you tell me which days work for access? Until then, please keep food in sealed containers and let me know if you see any openings under the sink.\n\nThanks,\nMaria"}];
+function fmt(x){return 'To: '+x.to+'\nSubject: '+x.subject+'\n\n'+x.body}
+function ok(b,t){const o=b.textContent;b.textContent=t;b.classList.add('done');setTimeout(()=>{b.textContent=o;b.classList.remove('done')},1500)}
+function cp(n,b){navigator.clipboard.writeText(fmt(D[n])).then(()=>ok(b,'Copied'))}
+function cpAll(b){navigator.clipboard.writeText(D.map(fmt).join('\n\n-----\n\n')).then(()=>ok(b,'Copied all'))}
+</script></body></html>
